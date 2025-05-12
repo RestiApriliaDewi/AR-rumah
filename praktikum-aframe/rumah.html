@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rumah A-Frame AR - Marker Hiro</title>
+    
+    <!-- A-Frame dan AR.js -->
+    <script src="https://aframe.io/releases/1.4.2/aframe.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/AR-js-org/AR.js@3.3.2/aframe/build/aframe-ar.min.js"></script>
+  </head>
+
+  <body style="margin: 0; overflow: hidden;">
+    <a-scene embedded arjs>
+      
+      <!-- Marker Hiro (menggunakan pattern yang disiapkan sendiri) -->
+      <a-marker type="pattern" url="pattern-hiro.patt">
+
+        <!-- Dasar rumah (lantai) -->
+        <a-box position="0 0.05 0" depth="1" height="0.1" width="1" color="#8B4513"></a-box>
+
+        <!-- Dinding rumah -->
+        <a-box position="0 0.35 0" depth="1" height="0.6" width="1" color="#FFD700"></a-box>
+
+        <!-- Atap rumah (kerucut) -->
+        <a-cone position="0 0.8 0" radius-bottom="0.7" radius-top="0" height="0.4" color="#8B0000"></a-cone>
+
+      </a-marker>
+
+      <!-- Kamera AR -->
+      <a-entity camera></a-entity>
+    </a-scene>
+  </body>
+</html>
